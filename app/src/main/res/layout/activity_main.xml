@@ -9,13 +9,44 @@
     android:background="#000"
     tools:deviceIds="wear">
 
-    <FrameLayout
+    <LinearLayout
+        android:orientation="vertical"
         android:layout_width="match_parent"
         android:layout_height="match_parent"
         android:padding="@dimen/inner_frame_layout_padding"
         app:layout_boxedEdges="all">
 
-        
+        <TextView
+            android:textSize="16sp"
+            android:textStyle="bold"
+            android:text="운동 세트"
+            android:textColor="#fff"
+            android:layout_gravity="center|top"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"/>
 
-    </FrameLayout>
+        <TextView
+            android:paddingTop="3dp"
+            android:paddingBottom="5dp"
+            android:layout_marginTop="15dp"
+            android:gravity="center"
+            android:background="@drawable/radius"
+            android:textSize="22sp"
+            android:textColor="#fff"
+            android:layout_gravity="center"
+            android:text="0"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"/>
+
+        <Button
+            android:backgroundTint="#4040ff"
+            android:paddingTop="3dp"
+            android:paddingBottom="5dp"
+            android:text="Rest"
+            android:layout_marginTop="15dp"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"/>
+
+    </LinearLayout>
+
 </androidx.wear.widget.BoxInsetLayout>
