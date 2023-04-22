@@ -17,6 +17,7 @@
         android:layout_height="match_parent">
 
         <TextView
+            android:id="@+id/setText"
             android:gravity="center|top"
             android:textSize="16sp"
             android:textStyle="bold"
@@ -28,6 +29,7 @@
 
 
         <TextView
+            android:id="@+id/timeText"
             android:layout_marginTop="10dp"
             android:textSize="42sp"
             android:textStyle="bold"
@@ -44,6 +46,7 @@
             android:layout_height="wrap_content">
 
             <ImageButton
+                android:id="@+id/closeButton"
                 android:layout_marginEnd="5dp"
                 android:background="@drawable/radius_img_gray"
                 android:src="@drawable/close"
@@ -51,10 +54,10 @@
                 android:layout_height="45dp"/>
 
             <ImageButton
-                android:paddingStart="3dp"
+                android:id="@+id/toggleButton"
                 android:layout_marginStart="5dp"
-                android:background="@drawable/radius_img"
-                android:src="@drawable/play"
+                android:background="@drawable/radius_img_red"
+                android:src="@drawable/stop"
                 android:layout_width="45dp"
                 android:layout_height="45dp"/>
 
