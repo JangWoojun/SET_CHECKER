@@ -10,105 +10,108 @@
     tools:deviceIds="wear">
 
     <androidx.core.widget.NestedScrollView
-        android:padding="@dimen/inner_frame_layout_padding"
-        app:layout_boxedEdges="all"
         android:layout_width="match_parent"
-        android:layout_height="match_parent">
+        android:layout_height="wrap_content"
+        android:padding="@dimen/inner_frame_layout_padding"
+        app:layout_boxedEdges="right|left">
 
         <LinearLayout
-            android:orientation="vertical"
+            android:layout_marginTop="40dp"
             android:layout_width="match_parent"
-            android:layout_height="match_parent">
+            android:layout_height="match_parent"
+            android:orientation="vertical">
 
             <TextView
-                android:textSize="16sp"
-                android:textStyle="bold"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_gravity="center|top"
                 android:text="운동 세트"
                 android:textColor="#fff"
-                android:layout_gravity="center|top"
-                android:layout_width="wrap_content"
-                android:layout_height="wrap_content"/>
+                android:textSize="16sp"
+                android:textStyle="bold" />
 
             <TextView
+                android:id="@+id/setText"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:layout_gravity="center"
+                android:layout_marginTop="15dp"
+                android:background="@drawable/radius"
+                android:gravity="center"
                 android:paddingTop="3dp"
                 android:paddingBottom="5dp"
-                android:layout_marginTop="15dp"
-                android:gravity="center"
-                android:background="@drawable/radius"
-                android:textSize="22sp"
-                android:textColor="#fff"
-                android:layout_gravity="center"
                 android:text="0"
-                android:layout_width="match_parent"
-                android:layout_height="wrap_content"/>
+                android:textColor="#fff"
+                android:textSize="22sp" />
 
             <Button
                 android:id="@+id/restButton"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:layout_marginTop="15dp"
                 android:backgroundTint="#4040ff"
                 android:paddingTop="3dp"
                 android:paddingBottom="5dp"
-                android:text="Rest"
-                android:layout_marginTop="15dp"
-                android:layout_width="match_parent"
-                android:layout_height="wrap_content"/>
+                android:text="Rest" />
 
             <TextView
-                android:layout_marginTop="30dp"
-                android:textSize="16sp"
-                android:textStyle="bold"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_gravity="center|top"
+                android:layout_marginTop="40dp"
                 android:text="휴식 시간"
                 android:textColor="#fff"
-                android:layout_gravity="center|top"
-                android:layout_width="wrap_content"
-                android:layout_height="wrap_content"/>
+                android:textSize="16sp"
+                android:textStyle="bold" />
 
             <LinearLayout
+                android:layout_width="match_parent"
+                android:layout_height="match_parent"
                 android:layout_marginTop="10dp"
                 android:gravity="center"
-                android:orientation="horizontal"
-                android:layout_width="match_parent"
-                android:layout_height="match_parent">
+                android:orientation="horizontal">
+
+                <Button
+                    android:id="@+id/time60"
+                    android:layout_width="60dp"
+                    android:layout_height="60dp"
+                    android:layout_marginEnd="5dp"
+                    android:background="@drawable/radius_img"
+                    android:text="01:00" />
 
                 <Button
                     android:id="@+id/time90"
-                    android:text="01:30"
-                    android:layout_marginEnd="5dp"
-                    android:background="@drawable/radius_img"
                     android:layout_width="60dp"
-                    android:layout_height="60dp"/>
-
-                <Button
-                    android:id="@+id/time120"
-                    android:text="02:00"
+                    android:layout_height="60dp"
                     android:layout_marginStart="5dp"
                     android:background="@drawable/radius_img"
-                    android:layout_width="60dp"
-                    android:layout_height="60dp"/>
+                    android:text="01:30" />
 
             </LinearLayout>
 
             <LinearLayout
-                android:layout_marginTop="3dp"
-                android:gravity="center"
-                android:orientation="horizontal"
+                android:layout_marginBottom="30dp"
                 android:layout_width="match_parent"
-                android:layout_height="match_parent">
+                android:layout_height="match_parent"
+                android:layout_marginTop="5dp"
+                android:gravity="center"
+                android:orientation="horizontal">
 
                 <Button
                     android:id="@+id/time150"
-                    android:text="02:30"
+                    android:layout_width="60dp"
+                    android:layout_height="60dp"
                     android:layout_marginEnd="5dp"
                     android:background="@drawable/radius_img"
-                    android:layout_width="60dp"
-                    android:layout_height="60dp"/>
+                    android:text="02:30" />
 
                 <Button
                     android:id="@+id/time180"
-                    android:text="03:00"
+                    android:layout_width="60dp"
+                    android:layout_height="60dp"
                     android:layout_marginStart="5dp"
                     android:background="@drawable/radius_img"
-                    android:layout_width="60dp"
-                    android:layout_height="60dp"/>
+                    android:text="03:00" />
 
             </LinearLayout>
 
