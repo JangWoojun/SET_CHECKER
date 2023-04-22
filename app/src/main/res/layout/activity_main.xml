@@ -7,16 +7,16 @@
     android:padding="@dimen/box_inset_layout_padding"
     tools:context=".MainActivity"
     android:background="#000"
+    android:id="@+id/activity_main"
     tools:deviceIds="wear">
 
     <androidx.core.widget.NestedScrollView
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
-        android:padding="@dimen/inner_frame_layout_padding"
-        app:layout_boxedEdges="right|left">
+        android:padding="@dimen/inner_frame_layout_padding">
 
         <LinearLayout
-            android:layout_marginTop="40dp"
+            android:layout_marginTop="20dp"
             android:layout_width="match_parent"
             android:layout_height="match_parent"
             android:orientation="vertical">
@@ -27,10 +27,12 @@
                 android:layout_gravity="center|top"
                 android:text="운동 세트"
                 android:textColor="#fff"
-                android:textSize="16sp"
+                android:textSize="22sp"
                 android:textStyle="bold" />
 
             <TextView
+                android:layout_marginStart="10dp"
+                android:layout_marginEnd="10dp"
                 android:id="@+id/setText"
                 android:layout_width="match_parent"
                 android:layout_height="wrap_content"
@@ -42,13 +44,17 @@
                 android:paddingBottom="5dp"
                 android:text="0"
                 android:textColor="#fff"
-                android:textSize="22sp" />
+                android:textSize="28sp" />
 
             <Button
+                android:textSize="20sp"
+                android:layout_gravity="center"
+                android:layout_marginStart="30dp"
+                android:layout_marginEnd="30dp"
                 android:id="@+id/restButton"
                 android:layout_width="match_parent"
-                android:layout_height="wrap_content"
-                android:layout_marginTop="15dp"
+                android:layout_height="60dp"
+                android:layout_marginTop="10dp"
                 android:backgroundTint="#4040ff"
                 android:paddingTop="3dp"
                 android:paddingBottom="5dp"
@@ -61,7 +67,7 @@
                 android:layout_marginTop="40dp"
                 android:text="휴식 시간"
                 android:textColor="#fff"
-                android:textSize="16sp"
+                android:textSize="22sp"
                 android:textStyle="bold" />
 
             <LinearLayout
@@ -73,16 +79,16 @@
 
                 <Button
                     android:id="@+id/time60"
-                    android:layout_width="60dp"
-                    android:layout_height="60dp"
+                    android:layout_width="70dp"
+                    android:layout_height="70dp"
                     android:layout_marginEnd="5dp"
                     android:background="@drawable/radius_img"
                     android:text="01:00" />
 
                 <Button
                     android:id="@+id/time90"
-                    android:layout_width="60dp"
-                    android:layout_height="60dp"
+                    android:layout_width="70dp"
+                    android:layout_height="70dp"
                     android:layout_marginStart="5dp"
                     android:background="@drawable/radius_img"
                     android:text="01:30" />
@@ -90,7 +96,7 @@
             </LinearLayout>
 
             <LinearLayout
-                android:layout_marginBottom="30dp"
+                android:layout_marginBottom="10dp"
                 android:layout_width="match_parent"
                 android:layout_height="match_parent"
                 android:layout_marginTop="5dp"
@@ -99,16 +105,16 @@
 
                 <Button
                     android:id="@+id/time150"
-                    android:layout_width="60dp"
-                    android:layout_height="60dp"
+                    android:layout_width="70dp"
+                    android:layout_height="70dp"
                     android:layout_marginEnd="5dp"
                     android:background="@drawable/radius_img"
                     android:text="02:30" />
 
                 <Button
                     android:id="@+id/time180"
-                    android:layout_width="60dp"
-                    android:layout_height="60dp"
+                    android:layout_width="70dp"
+                    android:layout_height="70dp"
                     android:layout_marginStart="5dp"
                     android:background="@drawable/radius_img"
                     android:text="03:00" />
