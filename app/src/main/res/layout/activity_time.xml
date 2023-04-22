@@ -12,13 +12,14 @@
     <LinearLayout
         android:orientation="vertical"
         android:padding="@dimen/inner_frame_layout_padding"
-        app:layout_boxedEdges="all"
+        app:layout_boxedEdges="left|right"
         android:layout_width="match_parent"
         android:layout_height="match_parent">
 
         <TextView
+            android:layout_marginTop="20dp"
             android:id="@+id/setText"
-            android:gravity="center|top"
+            android:gravity="center"
             android:textSize="16sp"
             android:textStyle="bold"
             android:text="0 SET"
@@ -30,8 +31,8 @@
 
         <TextView
             android:id="@+id/timeText"
-            android:layout_marginTop="10dp"
-            android:textSize="42sp"
+            android:layout_marginTop="15dp"
+            android:textSize="55sp"
             android:textStyle="bold"
             android:text="00:00"
             android:textColor="#fff"
@@ -40,26 +41,26 @@
             android:layout_height="wrap_content"/>
 
         <LinearLayout
-            android:layout_marginTop="15dp"
+            android:layout_marginTop="10dp"
             android:gravity="center"
             android:layout_width="match_parent"
-            android:layout_height="wrap_content">
+            android:layout_height="60dp">
 
             <ImageButton
                 android:id="@+id/closeButton"
                 android:layout_marginEnd="5dp"
                 android:background="@drawable/radius_img_gray"
                 android:src="@drawable/close"
-                android:layout_width="45dp"
-                android:layout_height="45dp"/>
+                android:layout_width="55dp"
+                android:layout_height="55dp"/>
 
             <ImageButton
                 android:id="@+id/toggleButton"
                 android:layout_marginStart="5dp"
                 android:background="@drawable/radius_img_red"
                 android:src="@drawable/stop"
-                android:layout_width="45dp"
-                android:layout_height="45dp"/>
+                android:layout_width="55dp"
+                android:layout_height="55dp"/>
 
         </LinearLayout>
 
