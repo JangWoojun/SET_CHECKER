@@ -9,44 +9,112 @@
     android:background="#000"
     tools:deviceIds="wear">
 
-    <LinearLayout
-        android:orientation="vertical"
-        android:layout_width="match_parent"
-        android:layout_height="match_parent"
+    <androidx.core.widget.NestedScrollView
         android:padding="@dimen/inner_frame_layout_padding"
-        app:layout_boxedEdges="all">
+        app:layout_boxedEdges="all"
+        android:layout_width="match_parent"
+        android:layout_height="match_parent">
 
-        <TextView
-            android:textSize="16sp"
-            android:textStyle="bold"
-            android:text="운동 세트"
-            android:textColor="#fff"
-            android:layout_gravity="center|top"
-            android:layout_width="wrap_content"
-            android:layout_height="wrap_content"/>
-
-        <TextView
-            android:paddingTop="3dp"
-            android:paddingBottom="5dp"
-            android:layout_marginTop="15dp"
-            android:gravity="center"
-            android:background="@drawable/radius"
-            android:textSize="22sp"
-            android:textColor="#fff"
-            android:layout_gravity="center"
-            android:text="0"
+        <LinearLayout
+            android:orientation="vertical"
             android:layout_width="match_parent"
-            android:layout_height="wrap_content"/>
+            android:layout_height="match_parent">
 
-        <Button
-            android:backgroundTint="#4040ff"
-            android:paddingTop="3dp"
-            android:paddingBottom="5dp"
-            android:text="Rest"
-            android:layout_marginTop="15dp"
-            android:layout_width="match_parent"
-            android:layout_height="wrap_content"/>
+            <TextView
+                android:textSize="16sp"
+                android:textStyle="bold"
+                android:text="운동 세트"
+                android:textColor="#fff"
+                android:layout_gravity="center|top"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"/>
 
-    </LinearLayout>
+            <TextView
+                android:paddingTop="3dp"
+                android:paddingBottom="5dp"
+                android:layout_marginTop="15dp"
+                android:gravity="center"
+                android:background="@drawable/radius"
+                android:textSize="22sp"
+                android:textColor="#fff"
+                android:layout_gravity="center"
+                android:text="0"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"/>
+
+            <Button
+                android:id="@+id/restButton"
+                android:backgroundTint="#4040ff"
+                android:paddingTop="3dp"
+                android:paddingBottom="5dp"
+                android:text="Rest"
+                android:layout_marginTop="15dp"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"/>
+
+            <TextView
+                android:layout_marginTop="30dp"
+                android:textSize="16sp"
+                android:textStyle="bold"
+                android:text="휴식 시간"
+                android:textColor="#fff"
+                android:layout_gravity="center|top"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"/>
+
+            <LinearLayout
+                android:layout_marginTop="10dp"
+                android:gravity="center"
+                android:orientation="horizontal"
+                android:layout_width="match_parent"
+                android:layout_height="match_parent">
+
+                <Button
+                    android:id="@+id/time90"
+                    android:text="01:30"
+                    android:layout_marginEnd="5dp"
+                    android:background="@drawable/radius_img"
+                    android:layout_width="60dp"
+                    android:layout_height="60dp"/>
+
+                <Button
+                    android:id="@+id/time120"
+                    android:text="02:00"
+                    android:layout_marginStart="5dp"
+                    android:background="@drawable/radius_img"
+                    android:layout_width="60dp"
+                    android:layout_height="60dp"/>
+
+            </LinearLayout>
+
+            <LinearLayout
+                android:layout_marginTop="3dp"
+                android:gravity="center"
+                android:orientation="horizontal"
+                android:layout_width="match_parent"
+                android:layout_height="match_parent">
+
+                <Button
+                    android:id="@+id/time150"
+                    android:text="02:30"
+                    android:layout_marginEnd="5dp"
+                    android:background="@drawable/radius_img"
+                    android:layout_width="60dp"
+                    android:layout_height="60dp"/>
+
+                <Button
+                    android:id="@+id/time180"
+                    android:text="03:00"
+                    android:layout_marginStart="5dp"
+                    android:background="@drawable/radius_img"
+                    android:layout_width="60dp"
+                    android:layout_height="60dp"/>
+
+            </LinearLayout>
+
+        </LinearLayout>
+
+
+    </androidx.core.widget.NestedScrollView>
 
 </androidx.wear.widget.BoxInsetLayout>
