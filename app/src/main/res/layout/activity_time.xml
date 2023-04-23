@@ -7,7 +7,7 @@
     android:padding="@dimen/box_inset_layout_padding"
     tools:deviceIds="wear"
     android:background="#000"
-    tools:context=".TimeActivity">
+    tools:context="com.sus.myhealth.TimeActivity">
 
     <LinearLayout
         android:orientation="vertical"
