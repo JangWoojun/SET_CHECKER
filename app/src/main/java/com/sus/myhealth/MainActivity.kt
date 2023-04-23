@@ -1,4 +1,4 @@
-package com.example.myhealth
+package com.sus.myhealth
 
 import android.app.Activity
 import android.content.Context
@@ -8,7 +8,7 @@ import android.os.VibrationEffect
 import android.os.Vibrator
 import android.widget.Button
 import android.widget.TextView
-import com.example.myhealth.databinding.ActivityMainBinding
+import com.sus.myhealth.databinding.ActivityMainBinding
 
 class MainActivity : Activity() {
 
@@ -29,42 +29,54 @@ class MainActivity : Activity() {
         val timeButton150 = findViewById<Button>(R.id.time150)
         val timeButton180 = findViewById<Button>(R.id.time180)
         val setText = findViewById<TextView>(R.id.setText)
+        val outButton = findViewById<Button>(R.id.outButton)
 
-        setText.text = Set.set.toString()
+        setText.text = Data.set.toString()
 
         restButton.setOnClickListener {
             vibrator.vibrate(VibrationEffect.createOneShot(duration, VibrationEffect.DEFAULT_AMPLITUDE))
-            val intent = Intent(this, TimeActivity::class.java).putExtra("time", 120*1000)
+            Data.time = 120*1000
+            val intent = Intent(this, TimeActivity::class.java)
             startActivity(intent)
             finish()
         }
 
         timeButton60.setOnClickListener {
             vibrator.vibrate(VibrationEffect.createOneShot(duration, VibrationEffect.DEFAULT_AMPLITUDE))
-            val intent = Intent(this, TimeActivity::class.java).putExtra("time", 60*1000)
+            Data.time = 60*1000
+            val intent = Intent(this, TimeActivity::class.java)
             startActivity(intent)
             finish()
         }
 
         timeButton90.setOnClickListener {
+            Data.time = 90*1000
             vibrator.vibrate(VibrationEffect.createOneShot(duration, VibrationEffect.DEFAULT_AMPLITUDE))
-            val intent = Intent(this, TimeActivity::class.java).putExtra("time", 90*1000)
+            val intent = Intent(this, TimeActivity::class.java)
             startActivity(intent)
             finish()
         }
 
         timeButton150.setOnClickListener {
+            Data.time = 150*1000
             vibrator.vibrate(VibrationEffect.createOneShot(duration, VibrationEffect.DEFAULT_AMPLITUDE))
-            val intent = Intent(this, TimeActivity::class.java).putExtra("time", 150*1000)
+            val intent = Intent(this, TimeActivity::class.java)
             startActivity(intent)
             finish()
         }
 
         timeButton180.setOnClickListener {
+            Data.time = 180*1000
             vibrator.vibrate(VibrationEffect.createOneShot(duration, VibrationEffect.DEFAULT_AMPLITUDE))
-            val intent = Intent(this, TimeActivity::class.java).putExtra("time", 180*1000)
+            val intent = Intent(this, TimeActivity::class.java)
             startActivity(intent)
             finish()
+        }
+
+        outButton.setOnClickListener {
+            moveTaskToBack(true)
+            finishAndRemoveTask()
+            android.os.Process.killProcess(android.os.Process.myPid())
         }
 
     }
