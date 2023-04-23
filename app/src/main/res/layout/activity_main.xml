@@ -5,7 +5,7 @@
     android:layout_width="match_parent"
     android:layout_height="match_parent"
     android:padding="@dimen/box_inset_layout_padding"
-    tools:context=".MainActivity"
+    tools:context="com.sus.myhealth.MainActivity"
     android:background="#000"
     android:id="@+id/activity_main"
     tools:deviceIds="wear">
@@ -96,7 +96,7 @@
             </LinearLayout>
 
             <LinearLayout
-                android:layout_marginBottom="10dp"
+                android:layout_marginBottom="15dp"
                 android:layout_width="match_parent"
                 android:layout_height="match_parent"
                 android:layout_marginTop="5dp"
@@ -120,6 +120,19 @@
                     android:text="03:00" />
 
             </LinearLayout>
+
+            <Button
+                android:textSize="20sp"
+                android:textStyle="bold"
+                android:layout_marginTop="30dp"
+                android:layout_marginBottom="50dp"
+                android:layout_gravity="center"
+                android:id="@+id/outButton"
+                android:layout_width="100dp"
+                android:layout_height="100dp"
+                android:layout_marginStart="5dp"
+                android:background="@drawable/radius_img_red"
+                android:text="종료" />
 
         </LinearLayout>
 
