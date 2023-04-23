@@ -4,21 +4,21 @@ plugins {
 }
 
 android {
-    namespace 'com.example.myhealth'
+    namespace 'com.sus.myhealth'
     compileSdk 33
 
     defaultConfig {
-        applicationId "com.example.myhealth"
+        applicationId "com.sus.myhealth"
         minSdk 30
         targetSdk 33
-        versionCode 1
-        versionName "1.0"
+        versionCode 3
+        versionName "1.2"
 
     }
 
     buildTypes {
         release {
-            minifyEnabled false
+            minifyEnabled true
             proguardFiles getDefaultProguardFile('proguard-android-optimize.txt'), 'proguard-rules.pro'
         }
     }
