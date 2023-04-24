@@ -20,9 +20,6 @@ class MainActivity : Activity() {
         binding = ActivityMainBinding.inflate(layoutInflater)
         setContentView(binding.root)
 
-        val vibrator = getSystemService(Context.VIBRATOR_SERVICE) as Vibrator
-        val duration = 50L
-
         val restButton = findViewById<Button>(R.id.restButton)
         val timeButton60 = findViewById<Button>(R.id.time60)
         val timeButton90 = findViewById<Button>(R.id.time90)
@@ -34,50 +31,46 @@ class MainActivity : Activity() {
         setText.text = Data.set.toString()
 
         restButton.setOnClickListener {
-            vibrator.vibrate(VibrationEffect.createOneShot(duration, VibrationEffect.DEFAULT_AMPLITUDE))
             Data.time = 120*1000
-            val intent = Intent(this, TimeActivity::class.java)
-            startActivity(intent)
-            finish()
+            moveTimer()
         }
 
         timeButton60.setOnClickListener {
-            vibrator.vibrate(VibrationEffect.createOneShot(duration, VibrationEffect.DEFAULT_AMPLITUDE))
             Data.time = 60*1000
-            val intent = Intent(this, TimeActivity::class.java)
-            startActivity(intent)
-            finish()
+            moveTimer()
         }
 
         timeButton90.setOnClickListener {
             Data.time = 90*1000
-            vibrator.vibrate(VibrationEffect.createOneShot(duration, VibrationEffect.DEFAULT_AMPLITUDE))
-            val intent = Intent(this, TimeActivity::class.java)
-            startActivity(intent)
-            finish()
+            moveTimer()
         }
 
         timeButton150.setOnClickListener {
             Data.time = 150*1000
-            vibrator.vibrate(VibrationEffect.createOneShot(duration, VibrationEffect.DEFAULT_AMPLITUDE))
-            val intent = Intent(this, TimeActivity::class.java)
-            startActivity(intent)
-            finish()
+            moveTimer()
         }
 
         timeButton180.setOnClickListener {
             Data.time = 180*1000
-            vibrator.vibrate(VibrationEffect.createOneShot(duration, VibrationEffect.DEFAULT_AMPLITUDE))
-            val intent = Intent(this, TimeActivity::class.java)
-            startActivity(intent)
-            finish()
+            moveTimer()
         }
 
         outButton.setOnClickListener {
+            val vibrator = getSystemService(Context.VIBRATOR_SERVICE) as Vibrator
+            vibrator.vibrate(VibrationEffect.createOneShot(50L, VibrationEffect.DEFAULT_AMPLITUDE))
             moveTaskToBack(true)
             finishAndRemoveTask()
             android.os.Process.killProcess(android.os.Process.myPid())
         }
 
+    }
+
+    private fun moveTimer() {
+        val vibrator = getSystemService(Context.VIBRATOR_SERVICE) as Vibrator
+        vibrator.vibrate(VibrationEffect.createOneShot(50L, VibrationEffect.DEFAULT_AMPLITUDE))
+
+        val intent = Intent(this, TimeActivity::class.java)
+        startActivity(intent)
+        finish()
     }
 }
