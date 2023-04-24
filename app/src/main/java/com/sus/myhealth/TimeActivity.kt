@@ -23,36 +23,48 @@ class TimeActivity : AppCompatActivity() {
     private val time = Data.time
     private val handler = Handler()
     private val vibrator by lazy { getSystemService(Context.VIBRATOR_SERVICE) as Vibrator }
-    private val powerManager by lazy { getSystemService(Context.POWER_SERVICE) as PowerManager }
-    private lateinit var wakeLock: PowerManager.WakeLock
+    private lateinit var wakeLock1: PowerManager.WakeLock
 
-    private val runnable = Runnable {
-        Data.set++
-        handler.removeCallbacks(runnable2)
-        val pattern = longArrayOf(0, 300, 100, 300, 100, 300)
-        vibrator.vibrate(pattern, 1)
-        val intent = Intent(this@TimeActivity, MainActivity::class.java)
-        startActivity(intent)
-        finish()
-    }
-
-    private val runnable2 = object : Runnable {
-        override fun run() {
-            viewTime++
-            if ((viewTime * 1000) <= time) {
-                val (minutes, seconds) = convertToMinutesAndSeconds(viewTime)
-                timeText.text = "$minutes:$seconds"
-                handler.postDelayed(this, 1000)
-            }
-        }
-    }
 
     override fun onCreate(savedInstanceState: Bundle?) {
         super.onCreate(savedInstanceState)
 
+        val powerManager = getSystemService(Context.POWER_SERVICE) as PowerManager
+
+        val wakeLock2 = powerManager.newWakeLock(
+            PowerManager.FULL_WAKE_LOCK or PowerManager.ACQUIRE_CAUSES_WAKEUP,
+            "MyApp:Tag"
+        )
+
+        val runnable2 = object : Runnable {
+            override fun run() {
+                viewTime++
+                if ((viewTime * 1000) <= time) {
+                    val (minutes, seconds) = convertToMinutesAndSeconds(viewTime)
+                    timeText.text = "$minutes:$seconds"
+                    handler.postDelayed(this, 1000)
+                }
+            }
+        }
+
+        val runnable = Runnable {
+            if (!powerManager.isInteractive) {
+                wakeLock2.acquire(5000)
+            }
+            Data.set++
+            handler.removeCallbacks(runnable2)
+            handler.postDelayed({
+                    val pattern = longArrayOf(100, 300, 100, 300)
+                    vibrator.vibrate(pattern, -1)
+                }, 500)
+            val intent = Intent(this@TimeActivity, MainActivity::class.java)
+            startActivity(intent)
+            finish()
+        }
+
         window.addFlags(WindowManager.LayoutParams.FLAG_KEEP_SCREEN_ON)
-        wakeLock = powerManager.newWakeLock(PowerManager.PARTIAL_WAKE_LOCK, "com.sus.myhealth:MyWakelockTag")
-        wakeLock.acquire(10*60*1000L)
+        wakeLock1 = powerManager.newWakeLock(PowerManager.PARTIAL_WAKE_LOCK, "com.sus.myhealth:MyWakelockTag")
+        wakeLock1.acquire(10*60*1000L)
 
         setContentView(R.layout.activity_time)
 
@@ -96,7 +108,7 @@ class TimeActivity : AppCompatActivity() {
 
     override fun onDestroy() {
         super.onDestroy()
-        wakeLock.release()
+        wakeLock1.release()
     }
     fun convertToMinutesAndSeconds(timeInSeconds: Int): Pair<String, String> {
         val minutes = timeInSeconds / 60
