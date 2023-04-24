@@ -2,11 +2,8 @@ package com.sus.myhealth
 
 import android.content.Context
 import android.content.Intent
+import android.os.*
 import androidx.appcompat.app.AppCompatActivity
-import android.os.Bundle
-import android.os.Handler
-import android.os.PowerManager
-import android.os.Vibrator
 import android.view.WindowManager
 import android.widget.ImageButton
 import android.widget.TextView
@@ -79,6 +76,7 @@ class TimeActivity : AppCompatActivity() {
         handler.postDelayed(runnable2, 1000)
 
         stopButton.setOnClickListener {
+            vibrator.vibrate(VibrationEffect.createOneShot(30L, VibrationEffect.DEFAULT_AMPLITUDE))
             handler.removeCallbacks(runnable)
             handler.removeCallbacks(runnable2)
             val intent = Intent(this, MainActivity::class.java)
@@ -87,6 +85,8 @@ class TimeActivity : AppCompatActivity() {
         }
 
         toggleButton.setOnClickListener {
+            vibrator.vibrate(VibrationEffect.createOneShot(30L, VibrationEffect.DEFAULT_AMPLITUDE))
+
             if (toggleChk) {
                 toggleChk = false
                 handler.removeCallbacks(runnable)
