@@ -67,7 +67,7 @@ class MainActivity : Activity() {
 
     private fun moveTimer() {
         val vibrator = getSystemService(Context.VIBRATOR_SERVICE) as Vibrator
-        vibrator.vibrate(VibrationEffect.createOneShot(50L, VibrationEffect.DEFAULT_AMPLITUDE))
+        vibrator.vibrate(VibrationEffect.createOneShot(30L, VibrationEffect.DEFAULT_AMPLITUDE))
 
         val intent = Intent(this, TimeActivity::class.java)
         startActivity(intent)
