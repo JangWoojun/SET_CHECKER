@@ -33,7 +33,7 @@ class TimeActivity : AppCompatActivity() {
 
         val wakeLock2 = powerManager.newWakeLock(
             PowerManager.FULL_WAKE_LOCK or PowerManager.ACQUIRE_CAUSES_WAKEUP,
-            "MyApp:Tag"
+            "com.sus.myhealth:MyWakelockTag"
         )
 
         val runnable2 = object : Runnable {
