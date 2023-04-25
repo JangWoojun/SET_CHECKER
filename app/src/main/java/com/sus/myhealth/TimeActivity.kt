@@ -61,7 +61,7 @@ class TimeActivity : AppCompatActivity() {
 
         window.addFlags(WindowManager.LayoutParams.FLAG_KEEP_SCREEN_ON)
         wakeLock1 = powerManager.newWakeLock(PowerManager.PARTIAL_WAKE_LOCK, "com.sus.myhealth:MyWakelockTag")
-        wakeLock1.acquire(10*60*1000L)
+        wakeLock1.acquire(120*60*1000L)
 
         setContentView(R.layout.activity_time)
 
